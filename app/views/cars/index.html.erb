@@ -6,6 +6,7 @@
     <% @cars.each do |car| %>
       <li>
         <%= car.model %>
+        <%= link_to 'details', car_path(car) %>
       </li>
     <% end %>
   </ol>

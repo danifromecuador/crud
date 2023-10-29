@@ -3,4 +3,9 @@ class CarsController < ApplicationController
     @cars = Car.all
     pp @cars
   end
+
+  def show
+    @car = Car.find(params[:id])
+    pp @car
+  end
 end
