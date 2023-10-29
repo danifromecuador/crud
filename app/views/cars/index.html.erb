@@ -1,0 +1,12 @@
+<h1>Create, Edit or Delet cars</h1>
+<% if @cars.empty? %>
+  <p>There are no cars in the database.</p>
+<% else %>
+  <ol>
+    <% @cars.each do |car| %>
+      <li>
+        <%= car.model %>
+      </li>
+    <% end %>
+  </ol>
+<% end %>
