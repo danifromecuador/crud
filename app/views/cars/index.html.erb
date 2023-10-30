@@ -1,0 +1,12 @@
+<h1>Here you can create, view, edit or remove cars</h1>
+<% if @cars.empty? %>
+  There is no cars yet, please create the first one
+<% else %>
+  <ol>
+    <% @cars.each do |c| %>
+      <li>
+        <%= c.model %>
+      </li>
+    <% end %>
+  </ol>
+<% end %>
