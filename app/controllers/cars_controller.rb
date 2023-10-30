@@ -1,7 +1,6 @@
 class CarsController < ApplicationController
   def index
     @cars = Car.all
-    # pp @cars
   end
 
   def show
@@ -17,8 +16,7 @@ class CarsController < ApplicationController
     if @car.save
       redirect_to cars_path
     else
-      pp @car.errors
-      render 'new'
+      redirect_to new_car_path, alert: @car.errors.full_messages
     end
   end
 
@@ -32,7 +30,7 @@ class CarsController < ApplicationController
     if @car.update(car_params)
       redirect_to car_path
     else
-      render :edit, status: :unprocessable_entity
+      redirect_to edit_car_path, alert: @car.errors.full_messages
     end
   end
 
