@@ -22,6 +22,20 @@ class CarsController < ApplicationController
     end
   end
 
+  def edit
+    @car = Car.find(params[:id])
+  end
+
+  def update
+    @car = Car.find(params[:id])
+
+    if @car.update(car_params)
+      redirect_to car_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @car = Car.find(params[:id])
     pp @car
