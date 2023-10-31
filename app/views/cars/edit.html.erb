@@ -1,0 +1,12 @@
+<%= form_for(@car) do |f|%>
+  <div>
+    <%= f.text_field :model, placeholder: "model" %>
+  </div>
+  <div>
+    <%= f.number_field :year, placeholder: "year" %>
+  </div>
+  <div>
+    <%= f.text_field :color, placeholder: "color" %>
+  </div>
+  <%= f.submit "update" %>
+<% end %>

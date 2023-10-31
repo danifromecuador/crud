@@ -1,0 +1,23 @@
+<h1>
+  Here you can create, view, edit or remove cars
+</h1>
+<% if @cars.empty? %>
+  There is no cars yet, please create the first one
+<% else %>
+  <ol>
+    <% @cars.each do |c| %>
+      <li>
+        <%= c.model %>
+        <%= link_to "details", car_path(c.id) %>
+        <%= link_to "edit", edit_car_path(c.id)%>
+        <%= link_to "destroy", car_path(c.id), data: {
+          turbo_method: :delete
+        } %>
+
+      </li>
+    <% end %>
+  </ol>
+<% end %>
+<div>
+  <%= link_to 'Create a new car', new_car_path %>
+</div>
